@@ -6,7 +6,7 @@ import { LiaPeopleCarrySolid } from "react-icons/lia";
 import { HiOutlineDocumentText } from "react-icons/hi2";
 import Image from 'next/image';
 import { ASSETS_URL } from '@/app/assets';
-import ChooseSection from '../shared/ChooseSection';
+// import ChooseSection from '../shared/ChooseSection';
 
 export default function AboutContainer() {
     return (

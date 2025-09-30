@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
         <div className="py-6 pt-8 px-4 md:px-6 space-y-4">
           <div className="space-y-1">
             <h4 data-aos="fade-up" data-aos-delay="100" className="text-text text-base font-semibold">1. Introduction</h4>
-            <p data-aos="fade-up" data-aos-delay="200" className="text-sm text-text/90 text-justify font-medium pl-4 leading-loose">Welcome to DocnDoc, a land acquisition platform provided by Fisibul Properties Ltd. ("Fisibul," "we," "us," or "our"). At DocnDoc, we are committed to protecting your privacy and ensuring that your personal information is handled in a secure and responsible manner. This Privacy Policy outlines how we collect, use, store, and safeguard your data when you access and use our platform for land acquisition and payment plans.</p>
+            <p data-aos="fade-up" data-aos-delay="200" className="text-sm text-text/90 text-justify font-medium pl-4 leading-loose">Welcome to DocnDoc, a land acquisition platform provided by Fisibul Properties Ltd. (&quo;Fisibul,&quo; &quo;we,&quo; &quo;us,&quo; or &quo;our&quo;). At DocnDoc, we are committed to protecting your privacy and ensuring that your personal information is handled in a secure and responsible manner. This Privacy Policy outlines how we collect, use, store, and safeguard your data when you access and use our platform for land acquisition and payment plans.</p>
           </div>
           <div className="space-y-1">
             <h4 data-aos="fade-up" data-aos-delay="100" className="text-text text-base font-semibold">2. Information We Collect</h4>
@@ -67,7 +67,7 @@ export default function PrivacyPolicy() {
             <div data-aos="fade-up" data-aos-delay="400" className="text-sm text-text">
               <p className="flex gap-2 pl-4 py-1"><RiCheckboxCircleFill className="text-[.6rem] text-text translate-y-1.5 flex-shrink-0" />Access and Correction: You can request access to your personal data and ask us to correct any inaccuracies.</p>
               <p className="flex gap-2 pl-4 py-1"><RiCheckboxCircleFill className="text-[.6rem] text-text translate-y-1.5 flex-shrink-0" />Deletion: You can request that we delete your personal data, subject to certain legal obligations and retention periods.</p>
-              <p className="flex gap-2 pl-4 py-1"><RiCheckboxCircleFill className="text-[.6rem] text-text translate-y-1.5 flex-shrink-0" />Opt-Out: You can opt out of marketing communications at any time by clicking the "unsubscribe" link in our emails or by contacting us directly.</p>
+              <p className="flex gap-2 pl-4 py-1"><RiCheckboxCircleFill className="text-[.6rem] text-text translate-y-1.5 flex-shrink-0" />Opt-Out: You can opt out of marketing communications at any time by clicking the &quo;unsubscribe&quo; link in our emails or by contacting us directly.</p>
               <p className="flex gap-2 pl-4 py-1"><RiCheckboxCircleFill className="text-[.6rem] text-text translate-y-1.5 flex-shrink-0" />Withdraw Consent: If you have given us consent to process your data, you can withdraw it at any time.</p>
               <p className="flex gap-2 pl-4 py-1"><RiCheckboxCircleFill className="text-[.6rem] text-text translate-y-1.5 flex-shrink-0" />To exercise any of these rights, please  <Link href={'mailto: admin@docndoc.com'} className="decoration-0 text-primary">contact us</Link>.</p>
             </div>
@@ -86,7 +86,7 @@ export default function PrivacyPolicy() {
           </div>
           <div className="space-y-1">
             <h4 data-aos="fade-up" data-aos-delay="300" className="text-text text-base font-semibold">11. Updates to This Privacy Policy</h4>
-            <p data-aos="fade-up" data-aos-delay="400" className="text-sm text-text/90 text-justify font-medium pl-4 leading-loose">We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Effective Date." We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information.</p>
+            <p data-aos="fade-up" data-aos-delay="400" className="text-sm text-text/90 text-justify font-medium pl-4 leading-loose">We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated &quo;Effective Date.&quo; We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information.</p>
           </div>
           <div className="space-y-1">
             <h4 data-aos="fade-up" data-aos-delay="300" className="text-text text-base font-semibold">12. Contact Us</h4>

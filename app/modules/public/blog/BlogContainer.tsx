@@ -22,6 +22,7 @@ export default function BlogContainer({ data }: { data: TBlogProps[] }) {
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
     setBlogs((prev) => prev);
+    console.log(sortValue, setTotalPages)
     blogContainerRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 

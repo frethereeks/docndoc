@@ -84,7 +84,7 @@ export default function ContactContainer() {
                         </figure>
                         <div className="flex-1 flex flex-col justify-center py-1 sm:py-2 md:py-3 text-dark font-primary">
                             <h2 className="text-lg md:text-lg font-primary font-bold">Send us an Email</h2>
-                            <p className="text-sm sm:text-base py-0">We'd love to hear from you.</p>
+                            <p className="text-sm sm:text-base py-0">We&apos;d love to hear from you.</p>
                             <Link href={`mailto: admin@docndoc.com`} target="_blank" rel="noopener noreferrer" className='w-max py-1 pr-2 underline underline-offset-2 text-text font-light font-primary'>Email Us</Link>
                         </div>
                     </aside>

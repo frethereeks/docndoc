@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { FaChevronLeft } from 'react-icons/fa6'
 import { IoSadOutline } from 'react-icons/io5'
 import { appRoutePaths } from '../routes/path'
