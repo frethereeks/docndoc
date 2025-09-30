@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaCaretRight } from 'react-icons/fa'
 import { IoShareOutline } from 'react-icons/io5'
-import { RWebShare } from 'react-web-share'
+// import { RWebShare } from 'react-web-share'
 
 type TPageProps = {
     data: TBlogProps | undefined
@@ -14,6 +14,25 @@ type TPageProps = {
 }
 
 export default function SingleBlogContainer({ data, relatedData }: TPageProps) {
+
+    const handleShare = () => {
+        if ("navigator" in window) {
+            if (navigator.canShare()) {
+                navigator.share({
+                    // title: "Check this out",
+                    // text: "Awesome content!",
+                    // url: window.location.href,
+                    text: data?.content.slice(0, 100),
+                    url: `${appRoutePaths.blog}/blog/${data?.slug}`,
+                    title: data?.title,
+                });
+            }
+            else {
+                alert("Web share is not available")
+            }
+        }
+    }
+
     return (
         <main className='relative'>
             <section className="relative bg-primary px-4">
@@ -29,15 +48,15 @@ export default function SingleBlogContainer({ data, relatedData }: TPageProps) {
             <section className="py-10 md:py-20 px-3 sm:px-4 bg-white">
                 <div className="container mx-auto space-y-6 md:space-y-6 grid lg:grid-cols-3 gap-4">
                     <article className="lg:col-span-2 text-text space-y-2">
-                        <h2 className="text-dark text-2xl md:text-3xl font-primary font-bold -mt-1">{data?.title}</h2>
-                        <figure className="relative h-64 sm:h-68 md:h-80 rounded-xs overflow-hidden">
-                            <Image src={data?.image ?? ""} alt={data?.title ?? ""} className='object-cover' fill />
-                        </figure>
                         <div className="flex items-center gap-4 -translate-y-1">
                             <p className="text-sm md:text-base text-dark/70 font-medium capitalize tracking-wider">{new Date(data?.createdAt ?? "").toDateString()}</p>
                             <span className="text-4xl text-primary mt-1 leading-2">•</span>
                             <p className="text-sm md:text-base text-dark/70 font-medium capitalize tracking-wider">{data?.category}</p>
                         </div>
+                        <h2 className="text-dark text-2xl md:text-3xl font-primary font-bold -mt-1">{data?.title}</h2>
+                        <figure className="relative h-64 sm:h-68 md:h-88 rounded-xs overflow-hidden">
+                            <Image src={data?.image ?? ""} alt={data?.title ?? ""} className='object-cover' fill />
+                        </figure>
                         <div className="flex justify-between items-center gap-4 px-2">
                             <div className="flex items-center gap-2">
                                 <div className="w-9 h-9 sm:w-8 sm:h-8 lg:w-10 lg:h-10 rounded-full relative overflow-hidden bg-secondary">
@@ -46,15 +65,7 @@ export default function SingleBlogContainer({ data, relatedData }: TPageProps) {
                                 <p className="text-sm md:text-base text-dark/80 font-semibold capitalize tracking-wider">{data?.creator?.firstname} {data?.creator?.lastname}</p>
                             </div>
                             <div className="flex gap-2">
-                                <RWebShare
-                                    data={{
-                                        text: data?.content.slice(0,100),
-                                        url: `${appRoutePaths.blog}/blog/${data?.slug}`,
-                                        title: data?.title,
-                                    }}
-                                >
-                                    <button className="border-2 border-primary/50 bg-powder w-9 h-9 md:w-8 md:h-8 text-lg lg:text-xl text-primary hover:text-dark/70 hover:bg-dark/5 cursor-pointer rounded-full flex justify-center items-center"><IoShareOutline /></button>
-                                </RWebShare>
+                                <button onClick={handleShare} className="border-2 border-primary/50 bg-powder w-9 h-9 md:w-8 md:h-8 text-lg lg:text-xl text-primary hover:text-dark/70 hover:bg-dark/5 cursor-pointer rounded-full flex justify-center items-center"><IoShareOutline /></button>
                             </div>
                         </div>
                         <div className="space-y-4">
@@ -74,7 +85,7 @@ export default function SingleBlogContainer({ data, relatedData }: TPageProps) {
                                         </div>
                                         <div className="flex-1 flex flex-col justify-center">
                                             <h2 className="text-dark text-lg md:text-xl font-primary line-clamp-2 text-ellipsis font-semibold">{el.title}</h2>
-                                            <p className="text-left text-base md:text-lg font-normal line-clamp-3 text-ellipsis leading-relaxed py-1">{el?.content.slice(0,200)}</p>
+                                            <p className="text-left text-base md:text-lg font-normal line-clamp-3 sm:line-clamp-2 md:line-clamp-3 text-ellipsis leading-tight py-1">{el?.content.slice(0, 200)}</p>
                                         </div>
                                     </Link>
                                 ))
