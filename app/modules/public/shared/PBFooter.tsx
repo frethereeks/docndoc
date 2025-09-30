@@ -1,3 +1,4 @@
+import { appRoutePaths } from '@/app/routes/path';
 import Link from 'next/link'
 import React from 'react'
 import { RiTwitterXLine, RiInstagramLine, RiVideoOnAiLine } from 'react-icons/ri'
@@ -11,19 +12,19 @@ export default function PBFooter() {
       children: [
         {
           title: "Home",
-          path: "/",
+          path: appRoutePaths.home,
         },
         {
           title: "About",
-          path: "/about",
+          path: appRoutePaths.about,
         },
         {
           title: "Blog",
-          path: "/blog",
+          path: appRoutePaths.blog,
         },
         {
           title: "Contact",
-          path: "/contact",
+          path: appRoutePaths.contact,
         },
       ]
     },
@@ -32,19 +33,19 @@ export default function PBFooter() {
       children: [
         {
           title: "Cookies",
-          path: "/cookies",
+          path: appRoutePaths.privacyPolicy,
         },
         {
           title: "Privacy Policy",
-          path: "/privacy-policy",
+          path: appRoutePaths.privacyPolicy,
         },
         {
           title: "Terms and Conditions",
-          path: "/terms-and-condition",
+          path: appRoutePaths.termsAndConditions,
         },
         {
           title: "Sitemap",
-          path: "/sitemap.xml",
+          path: appRoutePaths.sitemap,
         },
       ]
     },
@@ -61,7 +62,7 @@ export default function PBFooter() {
             </div>
             <h1 className="text-primary text-2xl md:text-3xl font-primary font-bold">DocNDoc</h1>
           </Link>
-          <p className="text-left text-lg md:text-xl font-medium leading-relaxed py-1">Maximize your marketing with human and algorithm-compliant contents that outperforms the competition in your niche, every time!</p>
+          <p className="text-left text-lg md:text-xl font-medium leading-relaxed py-1 md:max-w-4/5">Maximize your marketing with human and algorithm-compliant contents that outperforms the competition in your niche, every time!</p>
         </div>
         {
           footerLinks.map(item => (
@@ -82,9 +83,9 @@ export default function PBFooter() {
         <div className="container mx-auto flex flex-col md:flex-row justify-between md:items-center gap-2">
           <p className="text-center md:text-left text-base md:text-lg font-normal line-clamp-3 text-ellipsis leading-relaxed py-1">&copy; {new Date().getFullYear()}. <Link href={"/"} className='font-medium'>DocnDoc.</Link> All rights reserved.</p>
           <div className="flex justify-center md:justify-end gap-2 md:gap-4">
-            <Link href={`https://twitter.com/docndoc`} className="border border-dark/50 bg-text/10 w-7 h-7 text-base lg:text-lg hover:text-white cursor-pointer rounded-full flex justify-center items-center"><RiTwitterXLine /></Link>
-            <Link href={`https://facebook.com/docndoc`} className="border border-dark/50 bg-text/10 w-7 h-7 text-base lg:text-lg hover:text-white cursor-pointer rounded-full flex justify-center items-center"><SlSocialFacebook /></Link>
-            <Link href={`https://instagram.com/docndoc`} className="border border-dark/50 bg-text/10 w-7 h-7 text-base lg:text-lg hover:text-white cursor-pointer rounded-full flex justify-center items-center"><RiInstagramLine /></Link>
+            <Link href={`https://twitter.com/docndoc`} className="border border-powder/20 bg-powder/10 hover:bg-transparent w-7 h-7 text-base lg:text-lg hover:text-white cursor-pointer rounded-full flex justify-center items-center"><RiTwitterXLine /></Link>
+            <Link href={`https://facebook.com/docndoc`} className="border border-powder/20 bg-powder/10 hover:bg-transparent w-7 h-7 text-base lg:text-lg hover:text-white cursor-pointer rounded-full flex justify-center items-center"><SlSocialFacebook /></Link>
+            <Link href={`https://instagram.com/docndoc`} className="border border-powder/20 bg-powder/10 hover:bg-transparent w-7 h-7 text-base lg:text-lg hover:text-white cursor-pointer rounded-full flex justify-center items-center"><RiInstagramLine /></Link>
           </div>
         </div>
       </div>

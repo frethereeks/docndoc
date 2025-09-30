@@ -7,6 +7,8 @@ import { IoChevronBack, IoChevronForward } from 'react-icons/io5'
 import { ASSETS_URL } from '@/app/assets'
 import Image from 'next/image'
 import { FaCaretRight } from 'react-icons/fa'
+import Link from 'next/link'
+import { appRoutePaths } from '@/app/routes/path'
 
 const DEFAULT_PAGE_SIZE = 12
 
@@ -40,19 +42,19 @@ export default function BlogContainer({ data }: { data: TBlogProps[] }) {
   return (
     <main className='bg-light-grey'>
       <section className="relative bg-primary px-4">
-        <Image src={ASSETS_URL['male_chart_content']} alt={'female_chart_content'} className='object-cover opacity-10' fill />
+        <Image src={ASSETS_URL['male_content']} alt={'female_chart_content'} className='object-cover object-center opacity-10' fill />
         <div className="relative w-full min-h-[50vh] md:min-h-[60vh] md:max-w-xl mx-auto flex flex-col justify-center items-center gap-2 text-center text-powder select-none">
           <p className="flex items-center justify-center gap-1 text-sm md:text-base uppercase">
-            <FaCaretRight /> Read our Blog Articles
+            <Link href={appRoutePaths.home}>Home</Link> <FaCaretRight /> <Link href={appRoutePaths.blog}>Articles</Link> <FaCaretRight />
           </p>
-          <h2 className="text-white text-4xl md:text-6xl text-shadow-2xs font-primary font-bold">We always bring the Latest Information!</h2>
+          <h2 className="text-white text-4xl md:text-5xl text-shadow-2xs font-primary font-bold">We always bring the Latest Information!</h2>
           <p className="flex items-center justify-center gap-2 text-base py-2">If you seek information both in the industry and around the world like the current trends, announcements and other information as soon as they happen, you are at the right place.</p>
         </div>
       </section>
       <section className="py-10 md:py-20 px-3 sm:px-4 bg-white">
         <div className="container mx-auto space-y-6 md:space-y-6">
           <div ref={blogContainerRef} className="flex justify-between items-center gap-4">
-            <h2 className="sm:max-w-md md:max-w-lg text-dark text-2xl md:text-5xl font-primary font-bold">Latest Articles</h2>
+            <h2 className="sm:max-w-md md:max-w-lg text-dark text-2xl md:text-3xl font-primary font-bold">Latest Articles</h2>
               <Select
                 key={"80z72xh"}
                 options={
