@@ -13,7 +13,7 @@ export default function BlogCard({ id, slug, title, image, category, content, cr
                 <Image src={image} alt={title} className='object-cover' fill />
             </figure>
             <div className="flex flex-col gap-2 p-3 pt-2 sm:p-4">
-                <p className="text-xs text-text font-medium font-secondary">{moment(createdAt).fromNow()}</p>
+                <p className="text-xs text-primary font-medium font-secondary">{moment(createdAt).fromNow()}</p>
                 <div className="flex-1 space-y-2">
                     <h4 className="leading-tight text-dark text-lg sm:text-xl font-primary font-bold line-clamp-2 text-ellipsis">{title}</h4>
                     <p className="text-base text-text font-medium font-secondary line-clamp-2 md:line-clamp-3 text-ellipsis">{content.slice(0, 400)}</p>

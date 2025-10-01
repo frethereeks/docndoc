@@ -47,7 +47,10 @@ export default function PBHeader() {
           </div>
           <h1 className="text-primary text-2xl md:text-3xl font-primary font-bold">DocNDoc</h1>
         </Link>
-        <nav className={`bg-white flex-1 flex flex-col md:flex-row md:justify-between transition-all duration-300 absolute top-full w-full ${navOpen ? 'left-0' : 'left-full'} md:static`}>
+        <nav className={`bg-white flex-1 flex flex-col md:flex-row md:justify-between transition-all duration-300 fixed top-0 w-full ${navOpen ? 'left-10 z-40 h-screen' : 'left-full'} md:static`}>
+          <div onClick={() => setNavOpen(!navOpen)} className={`flex-shrink-0 w-8 h-8 md:hidden border-2 border-text/10 rounded-sm bg-light-grey text-primary text-2xl grid place-items-center`}>
+            <RxTextAlignRight />
+          </div>
           <div className="flex-1 flex flex-col md:flex-row md:justify-center md:items-center md:gap-2 lg:gap-4">
             {
               headerLinks.map(el => (

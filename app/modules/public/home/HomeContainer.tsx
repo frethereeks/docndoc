@@ -7,6 +7,16 @@ import { TfiBlackboard } from "react-icons/tfi";
 import { VscGitPullRequestGoToChanges } from "react-icons/vsc";
 
 export default function HomeContainer() {
+
+    const testimonials = [
+        { id: "81zx610", name: "James Adebola", role: "Financial Analyst", image: ASSETS_URL['male_content'], content: "The clean design on DocnDoc interface had met finding my feet within minutes. I was able to explain my needs and the team was able to capture it so aptly." },
+        { id: "81zx611", name: "Edith Silas", role: "Digital Creator", image: ASSETS_URL['female_content'], content: "I used to think the personal research I embark on was sufficient and impressive, until I got my mind absolutely blown off when a professional hand handled my contents for me for the first time." },
+        { id: "81zx612", name: "Daniel Frederick", role: "UX Designer", image: ASSETS_URL['group_male_content'], content: "My work brief usually consist of a lot articles that takes a great deal of time and effort to conjure up, these guys unburdened it for me like it's nothing. Totally recommend them for anyone in my field who is struggling or spends unnecessary time on this." },
+        { id: "81zx613", name: "Olumide Anyanwu", role: "Startup Founder", image: ASSETS_URL['male_chart_content'], content: "I got started with the platform in under 5 minutes - no paperwork, no KYC, nothing complicated. I topped up my balance and requested for the package I wanted and everything just went smoothly. Honestly the easiest I have gotten a request handled." },
+        { id: "81zx614", name: "Mary Panshak", role: "Product Manager", image: ASSETS_URL['group_female_content'], content: "My group was building an MVP and we needed contents that not only speak towards the theme of the product but also captivates the attention of the users without overwhelming them; DocnDoc did it!" },
+        { id: "81zx615", name: "Abdullahi Musa", role: "Consultant", image: ASSETS_URL['group_content'], content: "Literally, one of the hardest part of my job was coming up with contents that expresses my professional opinion about organizations I consult with. The guys at DocnDoc conceptualize my notes so easily." },
+    ];
+
     return (
         <main className="relative">
             <section className="py-10 md:py-20 px-4">
@@ -27,6 +37,44 @@ export default function HomeContainer() {
                             <p className="sm:max-w-md md:max-w-lg text-lg md:text-lg font-primary font-medium">Our developers take into account many factors arrived that from extensive research on strength and competitors in your niche, and with that, we formulate and develop that is both human and algorithm compliant that ranks higher as well as boost your marketing reach.</p>
                         </div>
                     </aside>
+                </div>
+            </section>
+            <section className="bg-white py-10 md:py-20 px-0">
+                <div className="bg-powder w-full max-w-7xl mx-auto space-y-6 md:space-y-8 rounded-2xl px-6 py-10 md:px-16 md:py-20">
+                    <div className="grid place-items-center gap-2">
+                        <p className="leading-2 flex items-center justify-center gap-1 text-sm md:text-base uppercase"> <FaCaretRight /> Advantages </p>
+                        <h2 className="max-w-xl mx-auto text-center text-primary text-2xl md:text-4xl font-primary font-bold">What our Happy Customer are saying about DocnDoc</h2>
+                    </div>
+                    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 py-10">
+                        {
+                            [...Array(Math.ceil(testimonials.length / 2))].map((_, i) => {
+                                const pair = testimonials.slice(i * 2, i * 2 + 2);
+                                return (
+                                    <div key={i} className="flex flex-col gap-4 md:gap-6">
+                                        {
+                                            pair.map(el => (
+                                                <aside key={el.id} className={`bg-white p-4 md:p-6 rounded-md shadow-xl space-y-4 md:space-y-2`}>
+                                                    <div className="flex gap-2 md:gap-4">
+                                                        <figure className="relative h-10 w-10 md:h-12 md:w-12 bg-dark rounded-full overflow-hidden">
+                                                            <Image src={el.image} alt={el.name} fill />
+                                                        </figure>
+                                                        <div className="flex flex-col justify-center">
+                                                            <h4 className="leading-5 text-dark text-lg md:text-lg font-semibold font-primary">{el.name}</h4>
+                                                            <p className="leading-4 text-primary/60 text-sm md:text-sm font-medium">{el.role}</p>
+                                                        </div>
+                                                    </div>
+                                                    <p className="leading-snug text-text text-sm md:text-base text-justify font-normal">{el.content}</p>
+                                                </aside>
+                                            ))
+                                        }
+                                    </div>
+                                )
+                            })
+                        }
+                        <div className="flex flex-col gap-4">
+
+                        </div>
+                    </div>
                 </div>
             </section>
             <section className="py-10 md:py-20 px-4 bg-powder/20">
