@@ -27,9 +27,9 @@ export default function ContactContainer() {
     const handleSubmit = async (data: TContactProps) => {
         // const fullname = encodeURI(data.fullname)
         notification.success({ message: `Thank you for reaching us ${data.fullname}. We will get back to you as soon as possible. Please wait...` })
-        const message = encodeURI(`Hi, my name is ${data.fullname}. I am reaching out to inquire about the flexipay plans`)
+        const message = encodeURI(`Hi, my name is ${data.fullname}. I am reaching out to inquire about the DocnDoc Content Procedure`)
         setTimeout(() => {
-            window.location.href = `https://wa.me/2349088888733?text=${message}`
+            window.location.href = `https://wa.me/2347016872575?text=${message}`
         }, 1500);
     }
 
@@ -55,7 +55,7 @@ export default function ContactContainer() {
                         <div className="flex-1 flex flex-col justify-center py-1 sm:py-2 md:py-3 text-dark font-primary">
                             <h2 className="text-lg md:text-lg font-primary font-bold">Text us on WhatsApp</h2>
                             <p className="text-sm sm:text-base py-0">Message and data rate may apply.</p>
-                            <Link href={`https://wa.me/234701687257?text=${message}`} target="_blank" rel="noopener noreferrer" className='w-max py-1 pr-2 underline underline-offset-2 text-text font-light font-primary'>Text Us</Link>
+                            <Link href={`https://wa.me/2347016872575?text=${message}`} target="_blank" rel="noopener noreferrer" className='w-max py-1 pr-2 underline underline-offset-2 text-text font-light font-primary'>Text Us</Link>
                         </div>
                     </aside>
                     <aside className="bg-white rounded-sm p-4 flex gap-2 hover:-translate-y-2 transition-all duration-300">
@@ -75,7 +75,7 @@ export default function ContactContainer() {
                         <div className="flex-1 flex flex-col justify-center py-1 sm:py-2 md:py-3 text-dark font-primary">
                             <h2 className="text-lg md:text-lg font-primary font-bold">Call our Hotline</h2>
                             <p className="text-sm sm:text-base py-0">Available 08:00am - 05:00pm. 5days a week.</p>
-                            <Link href={`tel: +234701687257`} target="_blank" rel="noopener noreferrer" className='w-max py-1 pr-2 underline underline-offset-2 text-text font-light font-primary'>Call Us</Link>
+                            <Link href={`tel: +2347016872575`} target="_blank" rel="noopener noreferrer" className='w-max py-1 pr-2 underline underline-offset-2 text-text font-light font-primary'>Call Us</Link>
                         </div>
                     </aside>
                     <aside className="bg-white rounded-sm p-4 flex gap-2 hover:-translate-y-2 transition-all duration-300">
