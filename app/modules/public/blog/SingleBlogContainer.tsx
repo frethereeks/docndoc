@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaCaretRight } from 'react-icons/fa'
 import { IoShareOutline } from 'react-icons/io5'
-// import { RWebShare } from 'react-web-share'
+import { RWebShare } from 'react-web-share'
 
 type TPageProps = {
     data: TBlogProps | undefined
@@ -15,30 +15,30 @@ type TPageProps = {
 
 export default function SingleBlogContainer({ data, relatedData }: TPageProps) {
 
-    const handleShare = () => {
-        if ("navigator" in window) {
-            if (navigator.canShare()) {
-                navigator.share({
-                    // title: "Check this out",
-                    // text: "Awesome content!",
-                    // url: window.location.href,
-                    text: data?.content.slice(0, 100),
-                    url: `${appRoutePaths.blog}/blog/${data?.slug}`,
-                    title: data?.title,
-                });
-            }
-            else {
-                alert("Web share is not available")
-            }
-        }
-    }
+    // const handleShare = () => {
+    //     if ("navigator" in window) {
+    //         if (navigator.share) {
+    //             navigator.share({
+    //                 // title: "Check this out",
+    //                 // text: "Awesome content!",
+    //                 // url: window.location.href,
+    //                 text: data?.content.slice(0, 100),
+    //                 url: `${appRoutePaths.blog}/blog/${data?.slug}`,
+    //                 title: data?.title,
+    //             });
+    //         }
+    //         else {
+    //             alert("Web share is not available")
+    //         }
+    //     }
+    // }
 
     return (
         <main className='relative'>
             <section className="relative bg-primary px-4">
                 <Image src={data?.image ?? ASSETS_URL['group_male_content']} alt={'group_male_content'} className='object-cover opacity-10' fill />
                 <div className="relative w-full min-h-[40vh] md:min-h-[50vh] md:max-w-4xl mx-auto flex flex-col justify-center items-center gap-2 text-center text-powder select-none">
-                    <p className="flex items-center justify-center gap-1 text-sm md:text-base uppercase">
+                    <p className="flex items-center justify-center gap-3 text-sm md:text-base uppercase">
                         <Link href={appRoutePaths.home}>Home</Link> <FaCaretRight /> <Link href={appRoutePaths.blog}>Articles</Link> <FaCaretRight />
                     </p>
                     <h2 className="text-white text-2xl md:text-4xl text-shadow-2xs font-primary font-bold">{data?.title}</h2>
@@ -65,7 +65,15 @@ export default function SingleBlogContainer({ data, relatedData }: TPageProps) {
                                 <p className="text-sm md:text-base text-dark/80 font-semibold capitalize tracking-wider">{data?.creator?.firstname} {data?.creator?.lastname}</p>
                             </div>
                             <div className="flex gap-2">
-                                <button onClick={handleShare} className="border-2 border-primary/50 bg-powder w-9 h-9 md:w-8 md:h-8 text-lg lg:text-xl text-primary hover:text-dark/70 hover:bg-dark/5 cursor-pointer rounded-full flex justify-center items-center"><IoShareOutline /></button>
+                                <RWebShare
+                                    data={{
+                                        text: data?.content.slice(0, 100),
+                                        url: `${appRoutePaths.blog}/blog/${data?.slug}`,
+                                        title: data?.title,
+                                    }}
+                                >
+                                    <button className="border-2 border-primary/50 bg-powder w-9 h-9 md:w-8 md:h-8 text-lg lg:text-xl text-primary hover:text-dark/70 hover:bg-dark/5 cursor-pointer rounded-full flex justify-center items-center"><IoShareOutline /></button>
+                                </RWebShare>
                             </div>
                         </div>
                         <div className="space-y-4">
@@ -83,7 +91,7 @@ export default function SingleBlogContainer({ data, relatedData }: TPageProps) {
                                         <div className="relative rounded-md overflow-hidden h-40 md:h-auto w-40 md:w-44">
                                             <Image src={el?.image ?? ""} alt={el?.title ?? ""} className='object-cover' fill />
                                         </div>
-                                        <div className="flex-1 flex flex-col justify-center">
+                                        <div className="flex-1 flex flex-col justify-center md:py-4">
                                             <h2 className="text-dark text-lg md:text-xl font-primary line-clamp-2 text-ellipsis font-semibold">{el.title}</h2>
                                             <p className="text-left text-base md:text-lg font-normal line-clamp-3 sm:line-clamp-2 md:line-clamp-3 text-ellipsis leading-tight py-1">{el?.content.slice(0, 200)}</p>
                                         </div>

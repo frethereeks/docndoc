@@ -19,8 +19,19 @@ export default function HomeContainer() {
 
     return (
         <main className="relative">
-            <section className="py-10 md:py-20 px-4">
-
+            <section className="px-4 bg-primary">
+                {/* <div className="container mx-auto">
+                    <article className="relative grid md:grid-cols-2 gap-4 md:gap-10">
+                        <aside className="relative z-20 w-full md:max-w-lg flex flex-col justify-center gap-4 md:gap-5 py-20 md:py-36 text-white">
+                            <p className="leading-2 flex items-center gap-1 text-base md:text-lg uppercase"> <FaCaretRight /> Introduction </p>
+                            <h2 className="text-3xl md:text-5xl font-primary font-bold">Develop your Contents with DocnDoc</h2>
+                            <p className="leading-loose text-base md:text-lg text-justify font-normal">Get customized world class contents enshrined in human-curated structure and wordings that converts, attract sales and outsmart competitors in your niche.</p>
+                        </aside>
+                        <aside className="md:relative">
+                            <Image src={ASSETS_URL['male_chart_content']} alt={'male_chart_content'} className="object-cover" fill />
+                        </aside>
+                    </article>
+                </div> */}
             </section>
             <section className="bg-white py-14 md:py-20 px-4">
                 <div className="container mx-auto flex flex-col md:flex-row gap-6 md:gap-10">
@@ -39,8 +50,8 @@ export default function HomeContainer() {
                     </aside>
                 </div>
             </section>
-            <section className="bg-white py-10 md:py-20 px-0">
-                <div className="bg-powder w-full max-w-7xl mx-auto space-y-6 md:space-y-8 rounded-2xl px-6 py-10 md:px-16 md:py-20">
+            <section className="bg-white pb-10 pt-16 md:py-20 px-0">
+                <div className="bg-powder w-full container mx-auto space-y-6 md:space-y-8 rounded-2xl px-6 py-10 md:px-16 md:py-20">
                     <div className="grid place-items-center gap-2">
                         <p className="leading-2 flex items-center justify-center gap-1 text-sm md:text-base uppercase"> <FaCaretRight /> Advantages </p>
                         <h2 className="max-w-xl mx-auto text-center text-primary text-2xl md:text-4xl font-primary font-bold">What our Happy Customer are saying about DocnDoc</h2>
@@ -77,7 +88,7 @@ export default function HomeContainer() {
                     </div>
                 </div>
             </section>
-            <section className="py-10 md:py-20 px-4 bg-powder/20">
+            <section className="py-10 md:py-20 px-4 bg-white">
                 <div className="container mx-auto space-y-10">
                     <h2 className="relative after:bg-primary after:absolute after:flex after:h-1 after:w-20 after:bottom-0 after:left-1/2 after:-translate-x-1/2 mx-auto sm:max-w-lg text-3xl md:text-4xl text-center text-text font-primary font-bold pb-5 mb-4">How we deliver game-changing contents</h2>
                     <div className="md:max-w-5xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 py-10">

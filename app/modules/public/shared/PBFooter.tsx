@@ -33,7 +33,7 @@ export default function PBFooter() {
       children: [
         {
           title: "Cookies",
-          path: appRoutePaths.privacyPolicy,
+          path: appRoutePaths.cookies,
         },
         {
           title: "Privacy Policy",
@@ -62,7 +62,7 @@ export default function PBFooter() {
             </div>
             <h1 className="text-primary text-2xl md:text-3xl font-primary font-bold">DocNDoc</h1>
           </Link>
-          <p className="text-left text-lg md:text-xl font-medium leading-relaxed py-1 md:max-w-4/5">Maximize your marketing with human and algorithm-compliant contents that outperforms the competition in your niche, every time!</p>
+          <p className="text-left text-lg md:text-xl font-medium leading-relaxed py-1 max-w-lg">Maximize your marketing with human and algorithm-compliant contents that outperforms the competition in your niche, every time!</p>
         </div>
         {
           footerLinks.map(item => (
